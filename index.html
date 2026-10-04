@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCERT Class 10 — Question & Answer Bank</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f2e9;
+  --bg-grad:radial-gradient(1200px 600px at 80% -10%, #f0e2cf 0%, transparent 60%),
+            radial-gradient(900px 500px at -10% 10%, #e7ecdf 0%, transparent 55%);
+  --surface:#fffdf8;
+  --surface-2:#fbf7ef;
+  --border:rgba(70,48,28,0.14);
+  --border-strong:rgba(70,48,28,0.26);
+  --text:#2a221a;
+  --text-dim:#6d5f4d;
+  --accent:#b4532a;
+  --accent-soft:#f5e3d8;
+  --sage:#5f7a4e;
+  --sage-soft:#e7ede0;
+  --gold:#a9791a;
+  --shadow:0 1px 2px rgba(70,48,28,0.05), 0 8px 24px -12px rgba(70,48,28,0.18);
+  --shadow-lg:0 2px 6px rgba(70,48,28,0.06), 0 20px 50px -20px rgba(70,48,28,0.28);
+  --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#17130f;
+    --bg-grad:radial-gradient(1200px 600px at 80% -10%, #2a2118 0%, transparent 60%),
+              radial-gradient(900px 500px at -10% 10%, #1e2419 0%, transparent 55%);
+    --surface:#211c16;
+    --surface-2:#1b1712;
+    --border:rgba(255,238,215,0.10);
+    --border-strong:rgba(255,238,215,0.22);
+    --text:#f1e9dc;
+    --text-dim:#a99a86;
+    --accent:#e08a55;
+    --accent-soft:#3a281d;
+    --sage:#9dbb85;
+    --sage-soft:#232c1c;
+    --gold:#d9b25a;
+    --shadow:0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -12px rgba(0,0,0,0.6);
+    --shadow-lg:0 2px 6px rgba(0,0,0,0.4), 0 20px 50px -20px rgba(0,0,0,0.7);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'IBM Plex Sans', system-ui, -apple-system, Segoe UI, sans-serif;
+  background-color:var(--bg);
+  background-image:var(--bg-grad);
+  background-attachment:fixed;
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:'IBM Plex Mono', ui-monospace, monospace}
+
+/* ---------- header ---------- */
+header.site{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter:blur(10px);
+  background:color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom:1px solid var(--border);
+}
+.site-inner{
+  max-width:1080px; margin:0 auto; padding:14px 20px;
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.brand{display:flex; align-items:center; gap:12px; margin-right:auto}
+.mark{
+  width:40px;height:40px;border-radius:11px;flex:0 0 auto;
+  background:linear-gradient(145deg,var(--accent),var(--gold));
+  display:grid;place-items:center;color:#fff;font-weight:700;
+  font-family:'Fraunces',serif;font-size:20px;
+  box-shadow:var(--shadow);
+}
+.brand h1{
+  font-family:'Fraunces',serif; font-weight:600; font-size:19px; margin:0; letter-spacing:-0.01em;
+}
+.brand p{margin:0; font-size:12px; color:var(--text-dim); font-family:'IBM Plex Mono',monospace; letter-spacing:0.02em}
+
+.search{
+  position:relative; flex:1 1 260px; max-width:360px; min-width:200px;
+}
+.search input{
+  width:100%; padding:10px 14px 10px 38px; border-radius:999px;
+  border:1px solid var(--border-strong); background:var(--surface);
+  color:var(--text); font-size:14px; font-family:inherit; outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+.search input:focus{border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
+.search svg{position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--text-dim)}
+
+/* ---------- layout ---------- */
+main{max-width:1080px; margin:0 auto; padding:28px 20px 80px}
+
+/* ---------- hero ---------- */
+.hero{margin-bottom:26px}
+.hero .kicker{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:8px;
+}
+.hero .kicker::before{content:""; width:22px;height:2px;background:var(--accent);border-radius:2px}
+.hero h2{
+  font-family:'Fraunces',serif; font-weight:600; font-size:clamp(26px,4vw,38px);
+  margin:10px 0 6px; letter-spacing:-0.02em; line-height:1.15;
+}
+.hero p{margin:0; color:var(--text-dim); max-width:60ch}
+
+/* ---------- subjects ---------- */
+.subjects{display:flex; gap:9px; flex-wrap:wrap; margin:26px 0 8px}
+.subject{
+  border:1px solid var(--border-strong); background:var(--surface);
+  color:var(--text-dim); padding:9px 16px; border-radius:999px; cursor:pointer;
+  font-size:13.5px; font-weight:500; font-family:inherit;
+  transition:all .18s ease; display:flex; align-items:center; gap:8px;
+}
+.subject .dot{width:7px;height:7px;border-radius:50%;background:var(--sage)}
+.subject:hover{border-color:var(--accent); color:var(--text); transform:translateY(-1px)}
+.subject.active{background:var(--accent); border-color:var(--accent); color:#fff}
+.subject.active .dot{background:#fff}
+
+/* ---------- chapters ---------- */
+.chapters-wrap{margin-top:22px}
+.section-label{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--text-dim); margin-bottom:10px;
+  display:flex; align-items:center; gap:9px;
+}
+.section-label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.chapters{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px}
+.chip{
+  text-align:left; border:1px solid var(--border); background:var(--surface);
+  border-radius:12px; padding:12px 14px; cursor:pointer; font-family:inherit;
+  color:var(--text); font-size:13.5px; line-height:1.4; transition:all .18s ease;
+  display:flex; gap:11px; align-items:flex-start;
+}
+.chip:hover{border-color:var(--border-strong); box-shadow:var(--shadow); transform:translateY(-1px)}
+.chip.active{border-color:var(--accent); background:var(--accent-soft)}
+.chip .num{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500;
+  color:var(--accent); flex:0 0 auto; padding-top:1px; min-width:20px;
+}
+.chip .ct{flex:1}
+.chip .badge{
+  display:inline-block; margin-top:6px; font-family:'IBM Plex Mono',monospace;
+  font-size:10.5px; letter-spacing:0.04em; color:var(--sage);
+  background:var(--sage-soft); padding:2px 7px; border-radius:6px;
+}
+.chip .badge.todo{color:var(--text-dim); background:var(--surface-2); border:1px dashed var(--border-strong)}
+
+/* ---------- questions ---------- */
+.qhead{
+  display:flex; align-items:baseline; gap:12px; margin:34px 0 4px; flex-wrap:wrap;
+}
+.qhead h3{font-family:'Fraunces',serif; font-weight:600; font-size:22px; margin:0; letter-spacing:-0.01em}
+.qhead .count{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--text-dim)}
+.qhead .tools{margin-left:auto; display:flex; gap:8px}
+.mini{
+  border:1px solid var(--border-strong); background:var(--surface); color:var(--text-dim);
+  font-family:'IBM Plex Mono',monospace; font-size:11.5px; padding:6px 11px; border-radius:8px;
+  cursor:pointer; transition:all .16s;
+}
+.mini:hover{color:var(--text); border-color:var(--accent)}
+
+.qa-list{margin-top:14px; display:flex; flex-direction:column; gap:10px}
+.qa{
+  border:1px solid var(--border); background:var(--surface); border-radius:14px;
+  overflow:hidden; transition:border-color .2s, box-shadow .2s;
+  animation:rise .5s both;
+}
+@keyframes rise{from{opacity:0; transform:translateY(10px)}to{opacity:1;transform:none}}
+.qa:hover{border-color:var(--border-strong)}
+.qa.open{border-color:var(--accent); box-shadow:var(--shadow)}
+.qbtn{
+  width:100%; text-align:left; background:none; border:0; cursor:pointer;
+  padding:15px 18px; display:flex; gap:13px; align-items:flex-start;
+  font-family:inherit; color:var(--text); font-size:15px; line-height:1.5;
+}
+.qbtn .qn{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:500; color:var(--accent);
+  flex:0 0 auto; padding-top:2px;
+}
+.qbtn .qtext{flex:1}
+.qbtn .chev{
+  flex:0 0 auto; color:var(--text-dim); transition:transform .3s ease; margin-top:2px;
+}
+.qa.open .chev{transform:rotate(180deg); color:var(--accent)}
+
+.answer-wrap{display:grid; grid-template-rows:0fr; transition:grid-template-rows .38s cubic-bezier(.4,0,.2,1)}
+.qa.open .answer-wrap{grid-template-rows:1fr}
+.answer-inner{overflow:hidden}
+.answer{
+  padding:0 18px 18px 18px; margin-left:30px;
+  border-left:2px solid var(--accent-soft);
+  color:var(--text);
+}
+.qa.open .answer{animation:fadeIn .45s .06s both}
+@keyframes fadeIn{from{opacity:0; transform:translateY(-4px)}to{opacity:1;transform:none}}
+.answer p{margin:10px 0}
+.answer .eq{
+  font-family:'IBM Plex Mono',monospace; font-size:13.5px; background:var(--surface-2);
+  border:1px solid var(--border); border-radius:9px; padding:9px 13px; margin:10px 0;
+  display:inline-block; line-height:1.9;
+}
+.answer ul{margin:10px 0; padding-left:20px}
+.answer li{margin:6px 0}
+.answer .lbl{color:var(--accent); font-weight:600}
+
+.empty{
+  border:1px dashed var(--border-strong); border-radius:14px; padding:34px 24px;
+  text-align:center; color:var(--text-dim); background:var(--surface-2); margin-top:14px;
+}
+.empty .big{font-family:'Fraunces',serif; font-size:19px; color:var(--text); display:block; margin-bottom:6px}
+
+.noresult{display:none; padding:26px; text-align:center; color:var(--text-dim); font-size:14px}
+
+footer{
+  border-top:1px solid var(--border); margin-top:60px; padding:22px 20px;
+  text-align:center; color:var(--text-dim); font-size:12.5px; font-family:'IBM Plex Mono',monospace;
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important; transition:none!important}
+}
+@media (max-width:560px){
+  .qbtn{padding:13px 14px}
+  .answer{margin-left:14px; padding:0 14px 16px 14px}
+  .qhead .tools{width:100%; margin-left:0}
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="site-inner">
+    <div class="brand">
+      <div class="mark">10</div>
+      <div>
+        <h1>NCERT Question Bank</h1>
+        <p>Class 10 &middot; chapter-wise Q &amp; A</p>
+      </div>
+    </div>
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input id="search" type="search" placeholder="Search a question…" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="kicker">Study companion</div>
+    <h2>Every question, its answer — one tap away.</h2>
+    <p>Pick a subject, choose a chapter, and tap any question to reveal the answer with a smooth animation. Use the search box to find any question instantly.</p>
+  </section>
+
+  <div class="subjects" id="subjects"></div>
+
+  <div class="chapters-wrap">
+    <div class="section-label">Chapters</div>
+    <div class="chapters" id="chapters"></div>
+  </div>
+
+  <div class="qhead">
+    <h3 id="chapterTitle">—</h3>
+    <span class="count" id="chapterCount"></span>
+    <div class="tools">
+      <button class="mini" id="openAll">Open all</button>
+      <button class="mini" id="closeAll">Close all</button>
+    </div>
+  </div>
+
+  <div class="qa-list" id="qlist"></div>
+  <div class="empty" id="empty"></div>
+  <div class="noresult" id="noresult">No question matches your search in this chapter.</div>
+</main>
+
+<footer>NCERT Class 10 &middot; Question &amp; Answer Bank &middot; built as a study aid</footer>
+
+<script>
+/* ============================================================
+   DATA  —  add questions to any chapter's "q" array as {q, a}
+   Answers may contain simple HTML (<sub>, <b>, <ul>…).
+   ============================================================ */
+const DATA = {
+  "Science": {
+    tag:"Science",
+    chapters:[
+      { n:"1", title:"Chemical Reactions and Equations", q:[
+        { q:"Why should a magnesium ribbon be cleaned before burning in air?",
+          a:"Magnesium ribbon is cleaned with sandpaper to remove the layer of <b>magnesium oxide</b> that forms on it by reacting with oxygen in the air. If this layer is not removed, the ribbon does not burn properly. Cleaning it lets the magnesium burn easily and give a clear, bright reaction." },
+        { q:"Write the balanced equation for: Hydrogen + Chlorine &rarr; Hydrogen chloride",
+          a:"<span class='eq'>H<sub>2</sub> + Cl<sub>2</sub> &rarr; 2HCl</span>" },
+        { q:"Write the balanced equation for: Barium chloride + Aluminium sulphate &rarr; Barium sulphate + Aluminium chloride",
+          a:"<span class='eq'>3BaCl<sub>2</sub> + Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> &rarr; 3BaSO<sub>4</sub> + 2AlCl<sub>3</sub></span>" },
+        { q:"Write the balanced equation for: Sodium + Water &rarr; Sodium hydroxide + Hydrogen",
+          a:"<span class='eq'>2Na + 2H<sub>2</sub>O &rarr; 2NaOH + H<sub>2</sub></span>" },
+        { q:"Write a balanced chemical equation with state symbols: Solutions of barium chloride and sodium sulphate in water react to give insoluble barium sulphate and a solution of sodium chloride.",
+          a:"<span class='eq'>BaCl<sub>2</sub>(aq) + Na<sub>2</sub>SO<sub>4</sub>(aq) &rarr; BaSO<sub>4</sub>(s) + 2NaCl(aq)</span><p>Here (aq) means aqueous (dissolved in water) and (s) means solid — the white precipitate of barium sulphate.</p>" },
+        { q:"Write a balanced chemical equation with state symbols: Sodium hydroxide solution reacts with hydrochloric acid to produce sodium chloride and water.",
+          a:"<span class='eq'>NaOH(aq) + HCl(aq) &rarr; NaCl(aq) + H<sub>2</sub>O(l)</span>" },
+        { q:"A solution of a substance 'X' is used for whitewashing. (i) Name the substance 'X' and write its formula.",
+          a:"Substance 'X' is <b>quick lime (calcium oxide)</b>, formula <b>CaO</b>." },
+        { q:"(ii) Write the reaction of the substance 'X' with water.",
+          a:"<span class='eq'>CaO(s) + H<sub>2</sub>O(l) &rarr; Ca(OH)<sub>2</sub>(aq)</span><p>Calcium oxide reacts with water to form calcium hydroxide (slaked lime), which is used for whitewashing.</p>" },
+        { q:"Why is the amount of gas collected in one test tube in the electrolysis of water double that in the other? Name this gas.",
+          a:"In the electrolysis of water, water decomposes as <span class='eq'>2H<sub>2</sub>O &rarr; 2H<sub>2</sub> + O<sub>2</sub></span> — hydrogen and oxygen are produced in a <b>2 : 1</b> ratio by volume. So the gas collected in double amount is <b>hydrogen</b>." },
+        { q:"Why does the colour of copper sulphate solution change when an iron nail is dipped in it?",
+          a:"Iron is more reactive than copper, so it displaces copper from copper sulphate:<span class='eq'>Fe + CuSO<sub>4</sub> &rarr; FeSO<sub>4</sub> + Cu</span>The blue colour of copper sulphate fades (turns light green) as it changes into iron sulphate, and a brownish layer of copper deposits on the nail." },
+        { q:"Give an example of a double displacement reaction (other than the one in Activity 1.10).",
+          a:"Reaction between silver nitrate and sodium chloride:<span class='eq'>AgNO<sub>3</sub>(aq) + NaCl(aq) &rarr; AgCl(s) + NaNO<sub>3</sub>(aq)</span>Here a white precipitate of silver chloride is formed." },
+        { q:"Identify the substance oxidised and the substance reduced: 4Na(s) + O<sub>2</sub>(g) &rarr; 2Na<sub>2</sub>O(s)",
+          a:"<b>Oxidised:</b> Sodium (Na) — it gains oxygen.<br><b>Reduced:</b> Oxygen (O<sub>2</sub>) — it gains hydrogen/loses oxygen in the combined sense; here oxygen is the oxidising agent and is itself reduced." },
+        { q:"Identify the substance oxidised and the substance reduced: CuO(s) + H<sub>2</sub>(g) &rarr; Cu(s) + H<sub>2</sub>O(l)",
+          a:"<b>Oxidised:</b> Hydrogen (H<sub>2</sub>) — it gains oxygen to form water.<br><b>Reduced:</b> Copper oxide (CuO) — it loses oxygen to form copper." },
+        { q:"Which statements about 2PbO(s) + C(s) &rarr; 2Pb(s) + CO<sub>2</sub>(g) are incorrect? (a) Lead is getting reduced (b) Carbon dioxide is getting oxidised (c) Carbon is getting oxidised (d) Lead oxide is getting reduced",
+          a:"<b>Answer: (i) (a) and (b).</b><p>Lead oxide (PbO) is reduced to lead, and carbon is oxidised to carbon dioxide. So (a) — lead is <i>getting</i> reduced — and (b) — carbon dioxide is getting oxidised — are incorrectly worded. (c) and (d) are correct.</p>" },
+        { q:"Fe<sub>2</sub>O<sub>3</sub> + 2Al &rarr; Al<sub>2</sub>O<sub>3</sub> + 2Fe. This reaction is an example of a: (a) combination reaction (b) double displacement reaction (c) decomposition reaction (d) displacement reaction",
+          a:"<b>(d) displacement reaction.</b><p>Aluminium (more reactive) displaces iron from iron oxide. It is a single displacement reaction (also called a thermite reaction).</p>" },
+        { q:"What happens when dilute hydrochloric acid is added to iron filings? (a) Hydrogen gas and iron chloride are produced (b) Chlorine gas and iron hydroxide are produced (c) No reaction takes place (d) Iron salt and water are produced",
+          a:"<b>(a) Hydrogen gas and iron chloride are produced.</b><span class='eq'>Fe + 2HCl &rarr; FeCl<sub>2</sub> + H<sub>2</sub></span>" },
+        { q:"What is a balanced chemical equation? Why should chemical equations be balanced?",
+          a:"A <b>balanced chemical equation</b> is one in which the number of atoms of each element is equal on both the reactant and the product sides.<p>Equations must be balanced because of the <b>law of conservation of mass</b> — matter is neither created nor destroyed in a chemical reaction. So the total mass of the reactants must equal the total mass of the products.</p>" },
+        { q:"Translate into a balanced chemical equation: Hydrogen gas combines with nitrogen to form ammonia.",
+          a:"<span class='eq'>3H<sub>2</sub> + N<sub>2</sub> &rarr; 2NH<sub>3</sub></span>" },
+        { q:"Translate into a balanced chemical equation: Hydrogen sulphide gas burns in air to give water and sulphur dioxide.",
+          a:"<span class='eq'>2H<sub>2</sub>S + 3O<sub>2</sub> &rarr; 2H<sub>2</sub>O + 2SO<sub>2</sub></span>" },
+        { q:"Translate into a balanced chemical equation: Barium chloride reacts with aluminium sulphate to give aluminium chloride and a precipitate of barium sulphate.",
+          a:"<span class='eq'>3BaCl<sub>2</sub> + Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> &rarr; 2AlCl<sub>3</sub> + 3BaSO<sub>4</sub></span>" },
+        { q:"Translate into a balanced chemical equation: Potassium metal reacts with water to give potassium hydroxide and hydrogen gas.",
+          a:"<span class='eq'>2K + 2H<sub>2</sub>O &rarr; 2KOH + H<sub>2</sub></span>" },
+        { q:"Balance: HNO<sub>3</sub> + Ca(OH)<sub>2</sub> &rarr; Ca(NO<sub>3</sub>)<sub>2</sub> + H<sub>2</sub>O",
+          a:"<span class='eq'>2HNO<sub>3</sub> + Ca(OH)<sub>2</sub> &rarr; Ca(NO<sub>3</sub>)<sub>2</sub> + 2H<sub>2</sub>O</span>" },
+        { q:"Balance: NaOH + H<sub>2</sub>SO<sub>4</sub> &rarr; Na<sub>2</sub>SO<sub>4</sub> + H<sub>2</sub>O",
+          a:"<span class='eq'>2NaOH + H<sub>2</sub>SO<sub>4</sub> &rarr; Na<sub>2</sub>SO<sub>4</sub> + 2H<sub>2</sub>O</span>" },
+        { q:"Balance: NaCl + AgNO<sub>3</sub> &rarr; AgCl + NaNO<sub>3</sub>",
+          a:"<span class='eq'>NaCl + AgNO<sub>3</sub> &rarr; AgCl + NaNO<sub>3</sub></span><p>Already balanced — one atom of each element on both sides.</p>" },
+        { q:"Balance: BaCl<sub>2</sub> + H<sub>2</sub>SO<sub>4</sub> &rarr; BaSO<sub>4</sub> + HCl",
+          a:"<span class='eq'>BaCl<sub>2</sub> + H<sub>2</sub>SO<sub>4</sub> &rarr; BaSO<sub>4</sub> + 2HCl</span>" },
+        { q:"Write the balanced equation: Calcium hydroxide + Carbon dioxide &rarr; Calcium carbonate + Water",
+          a:"<span class='eq'>Ca(OH)<sub>2</sub> + CO<sub>2</sub> &rarr; CaCO<sub>3</sub> + H<sub>2</sub>O</span>" },
+        { q:"Write the balanced equation: Zinc + Silver nitrate &rarr; Zinc nitrate + Silver",
+          a:"<span class='eq'>Zn + 2AgNO<sub>3</sub> &rarr; Zn(NO<sub>3</sub>)<sub>2</sub> + 2Ag</span>" },
+        { q:"Write the balanced equation: Aluminium + Copper chloride &rarr; Aluminium chloride + Copper",
+          a:"<span class='eq'>2Al + 3CuCl<sub>2</sub> &rarr; 2AlCl<sub>3</sub> + 3Cu</span>" },
+        { q:"Write the balanced equation: Barium chloride + Potassium sulphate &rarr; Barium sulphate + Potassium chloride",
+          a:"<span class='eq'>BaCl<sub>2</sub> + K<sub>2</sub>SO<sub>4</sub> &rarr; BaSO<sub>4</sub> + 2KCl</span>" },
+        { q:"Balance and name the type of reaction: Potassium bromide(aq) + Barium iodide(aq) &rarr; Potassium iodide(aq) + Barium bromide(s)",
+          a:"<span class='eq'>2KBr(aq) + BaI<sub>2</sub>(aq) &rarr; 2KI(aq) + BaBr<sub>2</sub>(s)</span><p><b>Type:</b> Double displacement reaction.</p>" },
+        { q:"Balance and name the type of reaction: Zinc carbonate(s) &rarr; Zinc oxide(s) + Carbon dioxide(g)",
+          a:"<span class='eq'>ZnCO<sub>3</sub>(s) &rarr; ZnO(s) + CO<sub>2</sub>(g)</span><p><b>Type:</b> Decomposition reaction.</p>" },
+        { q:"Balance and name the type of reaction: Hydrogen(g) + Chlorine(g) &rarr; Hydrogen chloride(g)",
+          a:"<span class='eq'>H<sub>2</sub>(g) + Cl<sub>2</sub>(g) &rarr; 2HCl(g)</span><p><b>Type:</b> Combination reaction.</p>" },
+        { q:"Balance and name the type of reaction: Magnesium(s) + Hydrochloric acid(aq) &rarr; Magnesium chloride(aq) + Hydrogen(g)",
+          a:"<span class='eq'>Mg(s) + 2HCl(aq) &rarr; MgCl<sub>2</sub>(aq) + H<sub>2</sub>(g)</span><p><b>Type:</b> Displacement reaction.</p>" },
+        { q:"What is meant by exothermic and endothermic reactions? Give examples.",
+          a:"<b>Exothermic:</b> reactions that release heat. Example — burning of natural gas:<span class='eq'>CH<sub>4</sub> + 2O<sub>2</sub> &rarr; CO<sub>2</sub> + 2H<sub>2</sub>O + heat</span><b>Endothermic:</b> reactions that absorb heat. Example — decomposition of calcium carbonate:<span class='eq'>CaCO<sub>3</sub> + heat &rarr; CaO + CO<sub>2</sub></span>" },
+        { q:"Why is respiration considered an exothermic reaction?",
+          a:"During respiration, glucose combines with oxygen to form carbon dioxide and water, and <b>energy is released</b>:<span class='eq'>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O + energy</span>Since heat/energy is given out, respiration is an exothermic reaction." },
+        { q:"Why are decomposition reactions called the opposite of combination reactions? Write equations.",
+          a:"In a <b>combination</b> reaction, two or more substances combine to form a single product. In a <b>decomposition</b> reaction, a single compound breaks down into two or more simpler substances — the exact reverse. Hence they are opposites.<p><b>Combination:</b> <span class='eq'>CaO + H<sub>2</sub>O &rarr; Ca(OH)<sub>2</sub></span><b>Decomposition:</b> <span class='eq'>CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub></span></p>" },
+        { q:"Write one equation each for decomposition reactions where energy is supplied as heat, light, and electricity.",
+          a:"<b>Heat (thermal):</b> <span class='eq'>CaCO<sub>3</sub> &rarr; CaO + CO<sub>2</sub></span><b>Light (photochemical):</b> <span class='eq'>2AgCl &rarr; 2Ag + Cl<sub>2</sub></span><b>Electricity (electrolytic):</b> <span class='eq'>2H<sub>2</sub>O &rarr; 2H<sub>2</sub> + O<sub>2</sub></span>" },
+        { q:"What is the difference between displacement and double displacement reactions? Write equations.",
+          a:"<b>Displacement:</b> a more reactive element displaces a less reactive element from its compound.<span class='eq'>Fe + CuSO<sub>4</sub> &rarr; FeSO<sub>4</sub> + Cu</span><b>Double displacement:</b> two compounds exchange their ions to form two new compounds.<span class='eq'>Na<sub>2</sub>SO<sub>4</sub> + BaCl<sub>2</sub> &rarr; BaSO<sub>4</sub> + 2NaCl</span>" },
+        { q:"In refining silver, recovery of silver from silver nitrate solution involves displacement by copper metal. Write the reaction.",
+          a:"<span class='eq'>Cu(s) + 2AgNO<sub>3</sub>(aq) &rarr; Cu(NO<sub>3</sub>)<sub>2</sub>(aq) + 2Ag(s)</span><p>Copper, being more reactive, displaces silver from silver nitrate.</p>" },
+        { q:"What is a precipitation reaction? Explain with examples.",
+          a:"A reaction in which an <b>insoluble solid (precipitate)</b> is formed is called a precipitation reaction. Example:<span class='eq'>Na<sub>2</sub>SO<sub>4</sub>(aq) + BaCl<sub>2</sub>(aq) &rarr; BaSO<sub>4</sub>(s) + 2NaCl(aq)</span>Here a white precipitate of barium sulphate is formed." },
+        { q:"Explain oxidation and reduction in terms of gain or loss of oxygen, with two examples each.",
+          a:"<b>Oxidation</b> = gain of oxygen.<span class='eq'>2Cu + O<sub>2</sub> &rarr; 2CuO &nbsp;&nbsp;|&nbsp;&nbsp; 2Mg + O<sub>2</sub> &rarr; 2MgO</span><b>Reduction</b> = loss of oxygen.<span class='eq'>CuO + H<sub>2</sub> &rarr; Cu + H<sub>2</sub>O &nbsp;&nbsp;|&nbsp;&nbsp; ZnO + C &rarr; Zn + CO</span>" },
+        { q:"A shiny brown element 'X' on heating in air becomes black. Name 'X' and the black compound formed.",
+          a:"'X' is <b>copper (Cu)</b>. The black compound is <b>copper(II) oxide (CuO)</b>.<span class='eq'>2Cu + O<sub>2</sub> &rarr; 2CuO</span>" },
+        { q:"Why do we apply paint on iron articles?",
+          a:"To prevent <b>rusting</b>. Paint forms a protective coating that stops iron from coming in contact with air (oxygen) and moisture, so rusting does not take place." },
+        { q:"Oil and fat containing food items are flushed with nitrogen. Why?",
+          a:"Nitrogen is an <b>inert gas</b>. Flushing with nitrogen removes oxygen and prevents the oils and fats from getting <b>oxidised</b> (becoming rancid). This keeps the food fresh for longer." },
+        { q:"Explain with one example each: (a) Corrosion (b) Rancidity",
+          a:"<b>(a) Corrosion:</b> the eating away of a metal surface by the action of air, moisture or chemicals. Example — rusting of iron, forming a brownish coating of iron oxide.<br><b>(b) Rancidity:</b> the oxidation of fats and oils in food, giving it a bad smell and taste. Example — stale butter or fried snacks that have gone bad." }
+      ]},
+      { n:"2", title:"Acids, Bases and Salts", q:[] },
+      { n:"3", title:"Metals and Non-metals", q:[] },
+      { n:"4", title:"Carbon and its Compounds", q:[] },
+      { n:"5", title:"Life Processes", q:[] },
+      { n:"6", title:"Control and Coordination", q:[] },
+      { n:"7", title:"How do Organisms Reproduce?", q:[] },
+      { n:"8", title:"Heredity", q:[] },
+      { n:"9", title:"Light — Reflection and Refraction", q:[] },
+      { n:"10", title:"The Human Eye and the Colourful World", q:[] },
+      { n:"11", title:"Electricity", q:[] },
+      { n:"12", title:"Magnetic Effects of Electric Current", q:[] },
+      { n:"13", title:"Our Environment", q:[] }
+    ]
+  },
+  "Maths": { tag:"Maths", chapters:[
+    { n:"1", title:"Real Numbers", q:[] },
+    { n:"2", title:"Polynomials", q:[] },
+    { n:"3", title:"Pair of Linear Equations in Two Variables", q:[] },
+    { n:"4", title:"Quadratic Equations", q:[] },
+    { n:"5", title:"Arithmetic Progressions", q:[] },
+    { n:"6", title:"Triangles", q:[] },
+    { n:"7", title:"Coordinate Geometry", q:[] },
+    { n:"8", title:"Introduction to Trigonometry", q:[] },
+    { n:"9", title:"Some Applications of Trigonometry", q:[] },
+    { n:"10", title:"Circles", q:[] },
+    { n:"11", title:"Areas Related to Circles", q:[] },
+    { n:"12", title:"Surface Areas and Volumes", q:[] },
+    { n:"13", title:"Statistics", q:[] },
+    { n:"14", title:"Probability", q:[] }
+  ]},
+  "Social Science": { tag:"Social Science", chapters:[
+    { n:"H1", title:"History — The Rise of Nationalism in Europe", q:[] },
+    { n:"H2", title:"History — Nationalism in India", q:[] },
+    { n:"H3", title:"History — The Making of a Global World", q:[] },
+    { n:"H4", title:"History — The Age of Industrialisation", q:[] },
+    { n:"H5", title:"History — Print Culture and the Modern World", q:[] },
+    { n:"G1", title:"Geography — Resources and Development", q:[] },
+    { n:"G2", title:"Geography — Forest and Wildlife Resources", q:[] },
+    { n:"G3", title:"Geography — Water Resources", q:[] },
+    { n:"G4", title:"Geography — Agriculture", q:[] },
+    { n:"G5", title:"Geography — Minerals and Energy Resources", q:[] },
+    { n:"G6", title:"Geography — Manufacturing Industries", q:[] },
+    { n:"G7", title:"Geography — Lifelines of National Economy", q:[] },
+    { n:"P1", title:"Civics — Power Sharing", q:[] },
+    { n:"P2", title:"Civics — Federalism", q:[] },
+    { n:"P3", title:"Civics — Gender, Religion and Caste", q:[] },
+    { n:"P4", title:"Civics — Political Parties", q:[] },
+    { n:"P5", title:"Civics — Outcomes of Democracy", q:[] },
+    { n:"E1", title:"Economics — Development", q:[] },
+    { n:"E2", title:"Economics — Sectors of the Indian Economy", q:[] },
+    { n:"E3", title:"Economics — Money and Credit", q:[] },
+    { n:"E4", title:"Economics — Globalisation and the Indian Economy", q:[] }
+  ]},
+  "English": { tag:"English", chapters:[
+    { n:"FF1", title:"First Flight — A Letter to God", q:[] },
+    { n:"FF2", title:"First Flight — Nelson Mandela: Long Walk to Freedom", q:[] },
+    { n:"FF3", title:"First Flight — Two Stories about Flying", q:[] },
+    { n:"FF4", title:"First Flight — From the Diary of Anne Frank", q:[] },
+    { n:"FF5", title:"First Flight — Glimpses of India", q:[] },
+    { n:"FF6", title:"First Flight — Mijbil the Otter", q:[] },
+    { n:"FF7", title:"First Flight — Madam Rides the Bus", q:[] },
+    { n:"FF8", title:"First Flight — The Sermon at Benares", q:[] },
+    { n:"FF9", title:"First Flight — The Proposal", q:[] },
+    { n:"FW1", title:"Footprints — A Triumph of Surgery", q:[] },
+    { n:"FW2", title:"Footprints — The Thief's Story", q:[] },
+    { n:"FW3", title:"Footprints — The Midnight Visitor", q:[] },
+    { n:"FW4", title:"Footprints — A Question of Trust", q:[] },
+    { n:"FW5", title:"Footprints — Footprints without Feet", q:[] },
+    { n:"FW6", title:"Footprints — The Making of a Scientist", q:[] },
+    { n:"FW7", title:"Footprints — The Necklace", q:[] },
+    { n:"FW8", title:"Footprints — Bholi", q:[] },
+    { n:"FW9", title:"Footprints — The Book That Saved the Earth", q:[] }
+  ]},
+  "Hindi": { tag:"Hindi", chapters:[
+    { n:"1", title:"Kshitij-2 — सूरदास (पद)", q:[] },
+    { n:"2", title:"Kshitij-2 — तुलसीदास (राम-लक्ष्मण-परशुराम संवाद)", q:[] },
+    { n:"3", title:"Kshitij-2 — जयशंकर प्रसाद (आत्मकथ्य)", q:[] },
+    { n:"4", title:"Kshitij-2 — सूर्यकांत त्रिपाठी 'निराला' (उत्साह / अट नहीं रही है)", q:[] },
+    { n:"5", title:"Kshitij-2 — नागार्जुन (यह दंतुरित मुसकान / फसल)", q:[] },
+    { n:"6", title:"Kshitij-2 — मंगलेश डबराल (संगतकार)", q:[] },
+    { n:"7", title:"Kshitij-2 — स्वयं प्रकाश (नेताजी का चश्मा)", q:[] },
+    { n:"8", title:"Kshitij-2 — रामवृक्ष बेनीपुरी (बालगोबिन भगत)", q:[] },
+    { n:"9", title:"Kshitij-2 — यशपाल (लखनवी अंदाज़)", q:[] },
+    { n:"10", title:"Kshitij-2 — मन्नू भंडारी (एक कहानी यह भी)", q:[] },
+    { n:"11", title:"Kshitij-2 — भदंत आनंद कौसल्यायन (नौबतखाने में इबादत)", q:[] },
+    { n:"12", title:"Kritika-2 — लखनवी अंदाज़ (पूरक पाठ्यपुस्तक)", q:[] }
+  ]},
+  "Sanskrit": { tag:"Sanskrit", chapters:[
+    { n:"1", title:"Shemushi — शुचिपर्यावरणम्", q:[] },
+    { n:"2", title:"Shemushi — बुद्धिर्बलवती सदा", q:[] },
+    { n:"3", title:"Shemushi — व्यायामः सर्वदा पथ्यः", q:[] },
+    { n:"4", title:"Shemushi — शिशुलालनम्", q:[] },
+    { n:"5", title:"Shemushi — जननी तुल्यवत्सला", q:[] },
+    { n:"6", title:"Shemushi — सुभाषितानि", q:[] },
+    { n:"7", title:"Shemushi — सौहार्दं प्रकृतेः शोभा", q:[] },
+    { n:"8", title:"Shemushi — विचित्रः साक्षी", q:[] },
+    { n:"9", title:"Shemushi — सूक्तयः", q:[] },
+    { n:"10", title:"Shemushi — भूकंपविभीषिका", q:[] },
+    { n:"11", title:"Shemushi — प्राणेभ्योऽपि प्रियः सुहृद्", q:[] }
+  ]}
+};
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+const $ = s => document.querySelector(s);
+const subjectsEl = $('#subjects');
+const chaptersEl = $('#chapters');
+const qlistEl = $('#qlist');
+const emptyEl = $('#empty');
+const noresultEl = $('#noresult');
+const titleEl = $('#chapterTitle');
+const countEl = $('#chapterCount');
+const searchEl = $('#search');
+
+let curSub = "Science";
+let curCh = 0;
+let query = "";
+
+function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+function renderSubjects(){
+  subjectsEl.innerHTML = "";
+  Object.keys(DATA).forEach(name => {
+    const b = document.createElement('button');
+    b.className = "subject" + (name === curSub ? " active" : "");
+    b.innerHTML = `<span class="dot"></span>${esc(name)}`;
+    b.onclick = () => { curSub = name; curCh = 0; query = ""; searchEl.value=""; renderSubjects(); renderChapters(); renderQuestions(); };
+    subjectsEl.appendChild(b);
+  });
+}
+
+function renderChapters(){
+  const chs = DATA[curSub].chapters;
+  chaptersEl.innerHTML = "";
+  chs.forEach((ch, i) => {
+    const b = document.createElement('button');
+    b.className = "chip" + (i === curCh ? " active" : "");
+    const done = ch.q && ch.q.length;
+    b.innerHTML = `<span class="num">${esc(ch.n)}</span><span class="ct">${esc(ch.title)}
+      <span class="badge ${done? '': 'todo'}">${done ? done + " Q&A" : "coming soon"}</span></span>`;
+    b.onclick = () => { curCh = i; query=""; searchEl.value=""; renderChapters(); renderQuestions(); };
+    chaptersEl.appendChild(b);
+  });
+}
+
+function renderQuestions(){
+  const ch = DATA[curSub].chapters[curCh];
+  titleEl.textContent = ch.title;
+  qlistEl.innerHTML = "";
+  noresultEl.style.display = "none";
+
+  if(!ch.q || !ch.q.length){
+    countEl.textContent = "";
+    emptyEl.style.display = "block";
+    emptyEl.innerHTML = `<span class="big">Content coming soon</span>Questions and answers for this chapter will be added shortly.`;
+    return;
+  }
+  emptyEl.style.display = "none";
+
+  const q = query.trim().toLowerCase();
+  const items = ch.q.map((item, idx) => ({item, idx}))
+    .filter(({item}) => !q || item.q.toLowerCase().includes(q) || item.a.toLowerCase().includes(q));
+
+  countEl.textContent = q ? `${items.length} of ${ch.q.length} shown` : `${ch.q.length} questions`;
+
+  if(!items.length){ noresultEl.style.display = "block"; return; }
+
+  items.forEach(({item, idx}, k) => {
+    const d = document.createElement('div');
+    d.className = "qa";
+    d.style.animationDelay = Math.min(k*30, 400) + "ms";
+    d.innerHTML = `
+      <button class="qbtn" aria-expanded="false">
+        <span class="qn">Q${idx+1}</span>
+        <span class="qtext">${item.q}</span>
+        <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg></span>
+      </button>
+      <div class="answer-wrap"><div class="answer-inner"><div class="answer">${item.a}</div></div></div>`;
+    const btn = d.querySelector('.qbtn');
+    btn.onclick = () => {
+      const open = d.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    };
+    qlistEl.appendChild(d);
+  });
+}
+
+$('#openAll').onclick = () => document.querySelectorAll('.qa').forEach(e=>{e.classList.add('open'); e.querySelector('.qbtn').setAttribute('aria-expanded','true');});
+$('#closeAll').onclick = () => document.querySelectorAll('.qa').forEach(e=>{e.classList.remove('open'); e.querySelector('.qbtn').setAttribute('aria-expanded','false');});
+
+let t;
+searchEl.addEventListener('input', e => {
+  clearTimeout(t);
+  const v = e.target.value;
+  t = setTimeout(()=>{ query = v; renderQuestions(); }, 180);
+});
+
+renderSubjects();
+renderChapters();
+renderQuestions();
+</script>
+</body>
+</html>
